@@ -9,14 +9,14 @@ class Product
   end
 
   def Product.all
-    JSON.parse(IO.read('./products.json')).map do |info|
-      p = Product.new
+    JSON.parse(IO.read('./products.json')).map do |info|   # reads value of JSON  # this is being returned
+      p = Product.new   # Converts JSON into an object
       p.sku = info['ASIN']
       p.price = info['price']
       p.title = info['title']
       p.description = info['description']
       p.in_stock = info['InStock']
-      p
+      p    
     end
   end
 end
