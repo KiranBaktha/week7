@@ -1,3 +1,6 @@
+# This file should generate the music tablateur. Don't worry too much about it. Explained in the video.
+
+
 1 0
 1 5
 1 3
