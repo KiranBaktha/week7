@@ -1,6 +1,9 @@
+
+# Code that Jeff wrote to generate the tablature.
 class TablatureGenerator
   STRING_COUNT = 6
 
+ # Each tab has a number and 2 -. 
   # 0--5--3--2--0-----1-----------------0--------
   # ---------------3--------------1--3-----------
   # ---------------------7--2--2-----------2--4--
@@ -8,13 +11,15 @@ class TablatureGenerator
   # ---------------------------------------------
   # ---------------------------------------------
 
+  # Code is amazing beacuse ther eis no if statements and error handlers. But it is not production ready. 
+  
   def generate_notes(lines)
     tablature_sections = generate_tabs(lines)
     tablature = tablature_sections.map { |parts| parts.join }
     return tablature.join("\n")
   end
 
-  def generate_tabs(lines)
+  def generate_tabs(lines)  
     tablature = lines.map do |line|
       parts = line.split(' ')
       tab_column(parts[0].to_i, parts[1])
@@ -36,7 +41,7 @@ class TablatureGenerator
   end
 end
 
-# Worries:
+# Worries:  # Stuff that can go wrong.
 #
 # 1. Command line argument for the filename may be missing
 # 2. Unable to open an input file
