@@ -1,3 +1,5 @@
+# Code does not run it is just an example.
+
 def handle_purchase(cart, credit_card)
   logger.info("Starting transaction at #{DateTime.now}")
   success_flag = nil
@@ -20,7 +22,7 @@ def charge_card(card, amount)
   logger.info("Starting to charge the card at #{DateTime.now}")
   result = PaymentGateway.charge(card.number, amount)
 
-  if result.status == 'complete'
+  if result.status == 'complete'  # if transaction was a success return the code otherwise return false.
     logger.info("Successfully charged card.  Trans Code = #{result.transaction_code}")
     return result.transaction_code
   else
